@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 cd /tmp || exit 1
-axel -a -n 10 https://ftp.gnu.org/gnu/make/make-"${1:?}".tar.gz
+#axel -a -n 10 https://ftp.gnu.org/gnu/make/make-"${1:?}".tar.gz
+wget https://ftp.gnu.org/gnu/make/make-"${1:?}".tar.gz
 tar xvzf /tmp/make-"${1:?}".tar.gz
 cd /tmp/make-"${1:?}" || exit 1
 ./configure
